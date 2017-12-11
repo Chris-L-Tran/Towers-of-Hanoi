@@ -34,13 +34,21 @@ h1 {
     
 }
 
-
+.diskqueue{
+    background-color: purple;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    position: relative;
+    height:50px;
+    width:200px;
+}
 
 .disks{
     background-color:green;
     display:flex;
     justify-content:center;
-    align-items: flex-start;
+    align-items: flex-end;
     position:relative;
     width:200px;
     height:190px;
@@ -53,6 +61,7 @@ h1 {
     background:black;
     border-radius:50px;
     position:relative;
+    top:10px;
 
 }
 
@@ -62,6 +71,15 @@ h1 {
     background:black;
     border-radius: 50px;
     
+}
+
+.disk{
+    background-color:red;
+    width: 150px;
+    height: 30px;
+    position:absolute;
+    border-radius: 75px;
+
 }
 
 
