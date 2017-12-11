@@ -29,8 +29,8 @@ Build with
 * Have tracker to track number of moves, also timer to test time used.
 
 # Coding Steps
+Design post
 Design board
-Design Posts
 Design Disks
 Add buttons 
 Add score tracker

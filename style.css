@@ -3,6 +3,12 @@ h1 {
     text-align: center;
 }
 
+#board{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .rod{
     width: 10px;
     height: 200px;
