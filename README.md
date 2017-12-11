@@ -10,3 +10,33 @@ Towers of Hanoi is a very simple puzzle game to test logic. Often used in IQ tes
 # Tech
 Build with 
 * Visual Studio Code
+
+# Pseudocode
+* Create board
+* Add disk to post 1
+* Have listeners on all three posts
+* If post is empty. Do nothing.
+* If post is not empty. Take the top disk and put it in the queue section (Not on any post)
+* Second listener on posts, to check where the disk will go.
+* Able to return disk back to same post.
+* if user clicks on other two posts. Check to see if posts are empty.
+* Check to compare sizes of disk in queue and disk on the top of the stack of the post.
+* If valid move, move disk. 
+* Check to see if tower is complete if not continue. 
+* If tower is complete prompt victory screen
+
+* Have reset button to reset board
+* Have tracker to track number of moves, also timer to test time used.
+
+# Coding Steps
+Design board
+Design Posts
+Design Disks
+Add buttons 
+Add score tracker
+Add listeners to each element
+Create function to remove disk
+create function to place disk
+create function to check if valid move
+create function to check if tower is complete
+create function to prompt victory screen
