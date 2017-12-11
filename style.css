@@ -20,15 +20,29 @@ h1 {
     margin: 0 auto;
 }
 
+
 .rod{
     width: 10px;
     height: 200px;
     background:black;
     border-radius:50px;
     position:relative;
-    left:105px;
+    
     
 }
+.disks{
+    background-color:green;
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    position:relative;
+    bottom:10px;
+    left:200px;
+    width:200px;
+    height:190px;
+
+}
+
 .base{
     width: 200px;
     height: 10px;
