@@ -1,3 +1,29 @@
 h1 {
     color: rgb(67, 167, 88);
+    text-align: center;
+}
+
+.rod{
+    width: 10px;
+    height: 200px;
+    background:black;
+    border-radius:50px;
+    position:relative;
+    left:110px;
+    
+}
+.base{
+    width: 200px;
+    height: 10px;
+    background:black;
+    border-radius: 50px;
+    
+}
+
+.post{
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    
+    
 }
