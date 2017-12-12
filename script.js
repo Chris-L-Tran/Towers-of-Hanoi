@@ -118,6 +118,7 @@ function post2Click(){
     if (queue.length == 0){
         
         queue.push(post2.pop())
+        $("#post2 .disks").find('div').first().remove()
         
     } else {
 
@@ -127,6 +128,14 @@ function post2Click(){
             alert("That is not a valid move. Please try again")
 
         } else{
+            if(queue[0] === 1){
+                $('<div/>', {class : 'disk3'}).prependTo($("#post2 .disks"))
+            } else if(queue[0] === 2){
+                $('<div/>', {class : 'disk2'}).prependTo($("#post2 .disks"))
+            } else if (queue[0] === 3){
+                $('<div/>', {class : 'disk1'}).prependTo($("#post2 .disks"))
+            }
+
             post2.push(queue.pop())
         }
         checkWin()
@@ -137,6 +146,7 @@ function post3Click(){
     if (queue.length == 0){
         
         queue.push(post3.pop())
+        $("#post3 .disks").find('div').first().remove()
         console.log("Post 3 click 0")
         
     } else {
@@ -147,6 +157,13 @@ function post3Click(){
             alert("That is not a valid move. Please try again")
 
         } else{
+            if(queue[0] === 1){
+                $('<div/>', {class : 'disk3'}).prependTo($("#post3 .disks"))
+            } else if(queue[0] === 2){
+                $('<div/>', {class : 'disk2'}).prependTo($("#post3 .disks"))
+            } else if (queue[0] === 3){
+                $('<div/>', {class : 'disk1'}).prependTo($("#post3 .disks"))
+            }
             post3.push(queue.pop())
             console.log("Post 3 click 3")
             checkWin()
