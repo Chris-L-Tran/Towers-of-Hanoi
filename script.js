@@ -72,11 +72,22 @@ function checkWin() {
 
 function post1Click(){
 
-    console.log(queue.length)
+
     if (queue.length == 0){
-        console.log("equal to 0")
+        
+        queue.push(post1.pop())
+        
     } else {
-        console.log("equal to 1")
+
+        var postSize = post1.length
+
+        if (queue[0] > post1[postSize]){
+            alert("That is not a valid move. Please try again")
+
+        } else{
+            post1.push(queue.pop())
+        }
+        
         checkWin()
     }
 
