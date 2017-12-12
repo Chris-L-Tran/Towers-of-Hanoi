@@ -5,6 +5,7 @@ var time = 0
 var moves = 0
 var counter 
 var postNum = 0
+var timer
 
 var post1 = [3,2,1]
 var post2 = []
@@ -14,7 +15,7 @@ var winArray = [3,2,1]
 
 function startTimer(){
     time = 0;
-    var timer = setInterval(function(){
+    timer = setInterval(function(){
         time++;
     $("#score .timeUsed").text(time)
     }, 1000)
@@ -79,6 +80,8 @@ function post1Click(){
     if (queue.length == 0){
         
         queue.push(post1.pop())
+        $("#post1 .disks").find('div').first().remove()
+        
         
     } else {
 
@@ -88,7 +91,18 @@ function post1Click(){
             alert("That is not a valid move. Please try again")
 
         } else{
+            
+            if(queue[0] === 1){
+                $('<div/>', {class : 'disk3'}).prependTo($("#post1 .disks"))
+            } else if(queue[0] === 2){
+                $('<div/>', {class : 'disk2'}).prependTo($("#post1 .disks"))
+            } else if (queue[0] === 3){
+                $('<div/>', {class : 'disk1'}).prependTo($("#post1 .disks"))
+            }
+            
             post1.push(queue.pop())
+
+            
             console.log("Post 1 click 2")
         }
         console.log(post1)
@@ -152,12 +166,6 @@ function startGame() {
         $("#post2 .disks").click(post2Click)
         $("#post3 .disks").click(post3Click)
     
-        //move disk to queue
-        //check for post to add to
-        //remove disk from queue
-        //add disk to desired post
-        //check if game conditions are met
-
 }
 
 
