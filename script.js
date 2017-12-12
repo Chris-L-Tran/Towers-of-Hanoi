@@ -10,7 +10,7 @@ function startTimer(){
 
 function test(){
     startTimer()
-
+    intBoard()
     var counter = parseInt($("#moves .moveNum").text())
     counter++
     $("#moves .moveNum").text(counter)
@@ -18,4 +18,17 @@ function test(){
 
 }
 
-$("#test").click(test)
+function addDisk() {
+
+}
+
+function intBoard() {
+    $("#post1 .disks").append("<div class='disk'></div>")
+}
+
+function startGame() {
+    startTimer()
+    intBoard()
+}
+
+$("#start").click(test)
