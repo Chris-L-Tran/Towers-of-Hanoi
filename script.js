@@ -1,9 +1,10 @@
-console.log("yay")
+
 
 var status = false
-var time = 0;
-var moves = 0;
+var time = 0
+var moves = 0
 var counter 
+var postNum = 0
 
 var post1 = [3,2,1]
 var post2 = []
@@ -27,19 +28,21 @@ function test(){
     moves++
     $("#moves .moveNum").text(moves)
     
-
 }
 
 function addDisk() {
 
 }
 
-function removeDisk(){
+function removeDisk(postNum){
     $(this).find('.disk3').remove()
-    console.log("yay2")
+
+    console.log(postNum)
+    console.log("removeDisk")
 }
+
 function intBoard() {
-    //$("#post1 .disks").prepend($disk)
+    
     $('<div/>', {class : 'disk1'}).prependTo($("#post1 .disks"))
     $('<div/>', {class : 'disk2'}).prependTo($("#post1 .disks"))
     $('<div/>', {class : 'disk3'}).prependTo($("#post1 .disks"))
@@ -59,11 +62,28 @@ function resetBoard(){
 
     
 }
+
 function startGame() {
     startTimer()
     intBoard()
+
+    console.log(status)
+    while (status === false){
+        
+        //check for first post 
+        
+        $("#post1 .disks").click(removeDisk)
+        $("#post2 .disks").click(removeDisk)
+        $("#post3 .disks").click(removeDisk)
+        //move disk to queue
+        //check for post to add to
+        //remove disk from queue
+        //add disk to desired post
+        //check if game conditions are met
+
+    }
 }
 
-$("#start").click(test)
+$("#start").click(startGame)
 $("#restart").click(resetBoard)
-$("#post1 .disks").click(removeDisk)
+$("#post2 .disks").click(function(){removeDisk(2)})
