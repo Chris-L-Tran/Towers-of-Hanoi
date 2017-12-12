@@ -22,8 +22,16 @@ function addDisk() {
 
 }
 
+function removeDisk(){
+    $(this).find('.disk3').remove()
+    console.log("yay2")
+}
 function intBoard() {
-    $("#post1 .disks").append("<div class='disk'></div>")
+    //$("#post1 .disks").prepend($disk)
+    $('<div/>', {class : 'disk1'}).prependTo($("#post1 .disks"))
+    $('<div/>', {class : 'disk2'}).prependTo($("#post1 .disks"))
+    $('<div/>', {class : 'disk3'}).prependTo($("#post1 .disks"))
+    
 }
 
 function startGame() {
@@ -32,3 +40,5 @@ function startGame() {
 }
 
 $("#start").click(test)
+$("#restart").click(removeDisk)
+$("#post1 .disks").click(removeDisk)
