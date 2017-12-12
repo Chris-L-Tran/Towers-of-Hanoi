@@ -69,7 +69,7 @@ function checkWin() {
     
     console.log(post3)
     if(post3[0] === winArray[0] && post3[1] === winArray[1] && post3[2] ===  winArray[2]){
-        alert("You Win!")
+        alert("You Win!\nYou beat the game in: " + moves + " moves and " + time + " seconds")
         resetBoard()
     }
 }
@@ -81,7 +81,15 @@ function post1Click(){
         
         queue.push(post1.pop())
         $("#post1 .disks").find('div').first().remove()
-        
+
+
+        if(queue[0] === 1){
+                $('<div/>', {class : 'disk3'}).prependTo($("#post1 .diskqueue"))
+            } else if(queue[0] === 2){
+                $('<div/>', {class : 'disk2'}).prependTo($("#post1 .diskqueue"))
+            } else if (queue[0] === 3){
+                $('<div/>', {class : 'disk1'}).prependTo($("#post1 .diskqueue"))
+            }
         
     } else {
 
@@ -102,9 +110,16 @@ function post1Click(){
             
             post1.push(queue.pop())
 
+            moves++
+            $("#moves .moveNum").text(moves)
             
             console.log("Post 1 click 2")
         }
+
+        $("#post1 .diskqueue").find('div').first().remove()
+        $("#post2 .diskqueue").find('div').first().remove()
+        $("#post3 .diskqueue").find('div').first().remove()
+
         console.log(post1)
         console.log(queue)
         checkWin()
@@ -119,6 +134,14 @@ function post2Click(){
         
         queue.push(post2.pop())
         $("#post2 .disks").find('div').first().remove()
+
+        if(queue[0] === 1){
+            $('<div/>', {class : 'disk3'}).prependTo($("#post2 .diskqueue"))
+        } else if(queue[0] === 2){
+            $('<div/>', {class : 'disk2'}).prependTo($("#post2 .diskqueue"))
+        } else if (queue[0] === 3){
+            $('<div/>', {class : 'disk1'}).prependTo($("#post2 .diskqueue"))
+        }
         
     } else {
 
@@ -137,7 +160,14 @@ function post2Click(){
             }
 
             post2.push(queue.pop())
+
+            moves++
+            $("#moves .moveNum").text(moves)
         }
+
+        $("#post1 .diskqueue").find('div').first().remove()
+        $("#post2 .diskqueue").find('div').first().remove()
+        $("#post3 .diskqueue").find('div').first().remove()
         checkWin()
     }
 }
@@ -148,6 +178,14 @@ function post3Click(){
         queue.push(post3.pop())
         $("#post3 .disks").find('div').first().remove()
         console.log("Post 3 click 0")
+
+        if(queue[0] === 1){
+            $('<div/>', {class : 'disk3'}).prependTo($("#post3 .diskqueue"))
+        } else if(queue[0] === 2){
+            $('<div/>', {class : 'disk2'}).prependTo($("#post3 .diskqueue"))
+        } else if (queue[0] === 3){
+            $('<div/>', {class : 'disk1'}).prependTo($("#post3 .diskqueue"))
+        }
         
     } else {
 
@@ -165,9 +203,16 @@ function post3Click(){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post3 .disks"))
             }
             post3.push(queue.pop())
+
+            moves++
+            $("#moves .moveNum").text(moves)
             console.log("Post 3 click 3")
             checkWin()
         }
+
+        $("#post1 .diskqueue").find('div').first().remove()
+        $("#post2 .diskqueue").find('div').first().remove()
+        $("#post3 .diskqueue").find('div').first().remove()
         
         
     }

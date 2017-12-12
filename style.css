@@ -35,7 +35,7 @@ h1 {
 }
 
 .diskqueue{
-    background-color: purple;
+    
     display:flex;
     justify-content:center;
     align-items: flex-end;
@@ -45,7 +45,7 @@ h1 {
 }
 
 .disks{
-    background-color: rgba(65, 65, 65, .2);
+    
     display:flex;
     justify-content:flex-end;
     align-items: center;
