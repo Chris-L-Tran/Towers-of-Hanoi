@@ -1,6 +1,6 @@
 
 
-var status = false
+var status = 0
 var time = 0
 var moves = 0
 var counter 
@@ -63,27 +63,53 @@ function resetBoard(){
     
 }
 
+function checkWin() {
+    if(post3 == [3, 2, 1]){
+        alert("You Win!")
+        resetBoard()
+    }
+}
+
+function post1Click(){
+
+    console.log(queue.length)
+    if (queue.length == 0){
+        console.log("equal to 0")
+    } else {
+        console.log("equal to 1")
+        checkWin()
+    }
+
+    
+}
+
+function post2Click(){
+    console.log("post 2")
+}
+
+function post3Click(){
+    console.log("post 3")
+}
+
 function startGame() {
     startTimer()
     intBoard()
 
-    console.log(status)
-    while (status === false){
-        
-        //check for first post 
-        
-        $("#post1 .disks").click(removeDisk)
-        $("#post2 .disks").click(removeDisk)
-        $("#post3 .disks").click(removeDisk)
+    
+   
+        $("#post1 .disks").click(post1Click)
+        $("#post2 .disks").click(post2Click)
+        $("#post3 .disks").click(post3Click)
+    
         //move disk to queue
         //check for post to add to
         //remove disk from queue
         //add disk to desired post
         //check if game conditions are met
 
-    }
 }
+
 
 $("#start").click(startGame)
 $("#restart").click(resetBoard)
-$("#post2 .disks").click(function(){removeDisk(2)})
+
