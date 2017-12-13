@@ -1,3 +1,9 @@
+body{
+    background-color: #485e75;
+    background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 h1 {
     color: rgb(67, 167, 88);
     text-align: center;
