@@ -104,7 +104,6 @@ function post1Click(){
     // else statement to check if there is something in the queue
     else if (queue.length == 1){
         
-    console.log("passes item in queue test")
         // get the number of variables in the post array
         var postSize = post1.length
 
@@ -118,7 +117,7 @@ function post1Click(){
         
         // else statement for when the user has made a correct choice
         else{
-            console.log("passes post2 clicked test")
+            
             // if statement to check the value of the element in the queue
             if(queue[0] == 1){
 
@@ -378,6 +377,8 @@ function resetBoard(){
     // $("#restart").off()
 
     $("#start").on("click", startGame)
+    $("#restart").off
+    
 }
 
 // function to start the game
@@ -394,18 +395,19 @@ function startGame() {
     // intialize the board
     intBoard()
    
-    console.log("listeners")
     // intalize listeners for posts    
     $("#post1 .disks").click(post1Click)
     $("#post2 .disks").click(post2Click)
     $("#post3 .disks").click(post3Click)
     
     $("#start").off()
+    $("#restart").on("click", resetBoard)
+    
 }
 
 
 
 // create listener for start button
 $("#start").on('click', startGame)
-$("#restart").click(resetBoard)
+
 
