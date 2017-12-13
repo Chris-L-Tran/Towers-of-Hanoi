@@ -36,7 +36,7 @@ function intBoard() {
     $('<div/>', {class : 'disk3'}).prependTo($("#post1 .disks"))
 
     // turn off start button
-    $("#start").off()
+    //$("#start").off()
     
     // create listener for reset button
     $("#restart").click(resetBoard)
@@ -73,10 +73,10 @@ function resetBoard(){
     $("#post3 .diskqueue").empty()
     
     //set up start button listener
-    $("#start").click(startGame)
+    //$("#start").click(startGame)
     
     // turn off restart button listener
-    $("#restart").off()
+    //$("#restart").off()
 }
 
 
@@ -362,7 +362,7 @@ function post3Click(){
 function startGame() {
 
     // start listening for the reset button
-    $("#restart").click(resetBoard)
+    //$("#restart").click(resetBoard)
 
     // start the timer
     startTimer()
