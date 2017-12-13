@@ -17,11 +17,11 @@ var winArray = [3,2,1]
 function startTimer(){
 
     // set timer to 0
-    time = 0;
+    time = 0
 
     // create timer function
     timer = setInterval(function(){
-        time++;
+        time++
         $("#score .timeUsed").text(time)
     }, 1000)
 }
@@ -39,45 +39,11 @@ function intBoard() {
     //$("#start").off()
     
     // create listener for reset button
-    $("#restart").click(resetBoard)
+    //$("#restart").click(resetBoard)
 }
 
 
-// function to clear board and reset variables
-function resetBoard(){
 
-    // reset variables
-    moves = 0
-    time = 0
-    queue = []
-    post1 = []
-    post2 = []
-    post3 = []
-    
-    // stop timer function
-    clearInterval(timer)
-
-    // set time element to 0
-    $("#score .timeUsed").text(time)
-    // set moves element to 0
-    $("#moves .moveNum").text(moves)
-
-    // clear all disks from the disks div
-    $("#post1 .disks").empty()
-    $("#post2 .disks").empty()
-    $("#post3 .disks").empty()
-
-    // clear all disks from the diskqueue div
-    $("#post1 .diskqueue").empty()
-    $("#post2 .diskqueue").empty()
-    $("#post3 .diskqueue").empty()
-    
-    //set up start button listener
-    //$("#start").click(startGame)
-    
-    // turn off restart button listener
-    //$("#restart").off()
-}
 
 
 // function to check for win
@@ -102,38 +68,43 @@ function checkWin() {
 // function that controls post1 clicks
 function post1Click(){
 
+    
     // checks to see if there is a disk in the queue
-    if (queue.length == 0){
+    if (queue.length === 0){
         
         // checks to see if there is any disks in post 1
         if(post1.length > 0){
-
+            
             //push the disk element from one to the queue
             queue.push(post1.pop())
-
+            
             // remove the top div element from post 1
             $("#post1 .disks").find('div').first().remove()
 
             // check to make sure what disk is in the queue
-            if(queue[0] === 1){
+            
+            if(queue[0] == 1){
+                
                     // if queue holds one. draw disk 3
                     $('<div/>', {class : 'disk3'}).prependTo($("#post1 .diskqueue"))
                 } 
                 // if queue holds two. draw disk 2
-                else if(queue[0] === 2){
+                else if(queue[0] == 2){
                     $('<div/>', {class : 'disk2'}).prependTo($("#post1 .diskqueue"))
                 } 
                 // if queue holds three. draw disk 1
-                else if (queue[0] === 3){
+                else if (queue[0] == 3){
                     $('<div/>', {class : 'disk1'}).prependTo($("#post1 .diskqueue"))
+                
             }
         }        
         
     } 
 
     // else statement to check if there is something in the queue
-    else if (queue.length == 1) {
-
+    else if (queue.length == 1){
+        
+    console.log("passes item in queue test")
         // get the number of variables in the post array
         var postSize = post1.length
 
@@ -147,21 +118,21 @@ function post1Click(){
         
         // else statement for when the user has made a correct choice
         else{
-            
+            console.log("passes post2 clicked test")
             // if statement to check the value of the element in the queue
-            if(queue[0] === 1){
+            if(queue[0] == 1){
 
                 // draw the element to post1
                 $('<div/>', {class : 'disk3'}).prependTo($("#post1 .disks"))
             } 
             
             // draw the element to post 2
-            else if(queue[0] === 2){
+            else if(queue[0] == 2){
                 $('<div/>', {class : 'disk2'}).prependTo($("#post1 .disks"))
             } 
             
             // draw the element to post 3
-            else if (queue[0] === 3){
+            else if (queue[0] == 3){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post1 .disks"))
             }
             
@@ -203,19 +174,19 @@ function post2Click(){
             $("#post2 .disks").find('div').first().remove()
 
             // check to see the current value of queue
-            if(queue[0] === 1){
+            if(queue[0] == 1){
 
                 // if value in queue is 1, draw disk 3 in post 2
                 $('<div/>', {class : 'disk3'}).prependTo($("#post2 .diskqueue"))
             } 
 
             // if value in queue is 2, draw disk 2 in post 2
-            else if(queue[0] === 2){
+            else if(queue[0] == 2){
                 $('<div/>', {class : 'disk2'}).prependTo($("#post2 .diskqueue"))
             } 
 
             // if value in queue is 3, draw disk 1 in post 2
-            else if (queue[0] === 3){
+            else if (queue[0] == 3){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post2 .diskqueue"))
             }
         }
@@ -239,17 +210,17 @@ function post2Click(){
         else{
 
             //if value in queue is 1, draw disk 3 in post2
-            if(queue[0] === 1){
+            if(queue[0] == 1){
                 $('<div/>', {class : 'disk3'}).prependTo($("#post2 .disks"))
             } 
             
             // if value in queue is 2, draw disk 2 in post 2
-            else if(queue[0] === 2){
+            else if(queue[0] == 2){
                 $('<div/>', {class : 'disk2'}).prependTo($("#post2 .disks"))
             } 
             
             // if value in queue is 3, draw disk 1 in post2
-            else if (queue[0] === 3){
+            else if (queue[0] == 3){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post2 .disks"))
             }
 
@@ -289,17 +260,17 @@ function post3Click(){
             $("#post3 .disks").find('div').first().remove()
 
             // if value in queue is 1, draw disk 3 in post3
-            if(queue[0] === 1){
+            if(queue[0] == 1){
                 $('<div/>', {class : 'disk3'}).prependTo($("#post3 .diskqueue"))
             } 
             
             // if value in queue is 2, draw disk 2 in post3
-            else if(queue[0] === 2){
+            else if(queue[0] == 2){
                 $('<div/>', {class : 'disk2'}).prependTo($("#post3 .diskqueue"))
             } 
             
             // if value in queue is 3, draw disk 1 in post3
-            else if (queue[0] === 3){
+            else if (queue[0] == 3){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post3 .diskqueue"))
             }
         }
@@ -323,17 +294,17 @@ function post3Click(){
         else{
 
             //if value in queue is 1, draw disk 3 in post3
-            if(queue[0] === 1){
+            if(queue[0] == 1){
                 $('<div/>', {class : 'disk3'}).prependTo($("#post3 .disks"))
             } 
             
             //if value in queue is 2, draw disk 2 in post3
-            else if(queue[0] === 2){
+            else if(queue[0] == 2){
                 $('<div/>', {class : 'disk2'}).prependTo($("#post3 .disks"))
             } 
             
             //if value in queue is 3, draw disk 1 in post3
-            else if (queue[0] === 3){
+            else if (queue[0] == 3){
                 $('<div/>', {class : 'disk1'}).prependTo($("#post3 .disks"))
             }
 
@@ -357,9 +328,62 @@ function post3Click(){
     }
 }
 
+// function to clear board and reset variables
+function resetBoard(){
+
+    // reset variables
+    moves = 0
+    time = 0
+    postNum = 0
+
+    queue = []
+    post1 = [3,2,1]
+    post2 = []
+    post3 = []
+    
+
+    
+    // stop timer function
+    clearInterval(timer)
+
+    // set time element to 0
+    $("#score .timeUsed").text(time)
+    // set moves element to 0
+    $("#moves .moveNum").text(moves)
+
+    // clear all disks from the disks div
+    //$("#post1 .disks").find('.div').empty()
+    //$("#post2 .disks").find('.div').empty()
+    //$("#post3 .disks").find('.div').empty()
+    
+    $("#post1 .disks").find(".disk1").remove()
+    $("#post1 .disks").find(".disk2").remove()
+    $("#post1 .disks").find(".disk3").remove()    
+    $("#post2 .disks").find(".disk1").remove()
+    $("#post2 .disks").find(".disk2").remove()
+    $("#post2 .disks").find(".disk3").remove()    
+    $("#post3 .disks").find(".disk1").remove()
+    $("#post3 .disks").find(".disk2").remove()
+    $("#post3 .disks").find(".disk3").remove()    
+
+    // clear all disks from the diskqueue div
+    $("#post1 .diskqueue").find('div').first().remove()
+    $("#post2 .diskqueue").find('div').first().remove()
+    $("#post3 .diskqueue").find('div').first().remove()
+    
+    //set up start button listener
+    //$("#start").click(startGame)
+    $('.disks').off()
+    // turn off restart button listener
+    // $("#restart").off()
+
+    $("#start").on("click", startGame)
+}
 
 // function to start the game
 function startGame() {
+    
+    // maybe // resetBoard()
 
     // start listening for the reset button
     //$("#restart").click(resetBoard)
@@ -370,14 +394,18 @@ function startGame() {
     // intialize the board
     intBoard()
    
+    console.log("listeners")
     // intalize listeners for posts    
     $("#post1 .disks").click(post1Click)
     $("#post2 .disks").click(post2Click)
     $("#post3 .disks").click(post3Click)
     
+    $("#start").off()
 }
 
-// create listener for start button
-$("#start").click(startGame)
 
+
+// create listener for start button
+$("#start").on('click', startGame)
+$("#restart").click(resetBoard)
 
