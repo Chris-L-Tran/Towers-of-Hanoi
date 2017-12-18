@@ -1,9 +1,16 @@
+// I commented out a few unused variables
+// It's best practice to use '===' instead of '=='
+// Long if/else conditionals can be difficult to read. Consider removing blank lines to shorten. You could also abstract some functionality into different functions and call them within the large postClick functions
+// the 3 postClick functions are a bit repetitive. Consider ways to write functions that could accommodate all 3 posts
+// overall great job! Your code is working well!
+
+
 // initilize global variables
-var status = 0
+// var status = 0
 var time = 0
 var moves = 0
-var counter 
-var postNum = 0
+// var counter 
+// var postNum = 0
 var timer
 
 // intialize arrays
@@ -28,7 +35,6 @@ function startTimer(){
 
 // function to intialize playing board
 function intBoard() {
-    
 
     // create 3 disks on the first post
     $('<div/>', {class : 'disk1'}).prependTo($("#post1 .disks"))
@@ -49,7 +55,6 @@ function intBoard() {
 // function to check for win
 function checkWin() {
 
-    
     //function to check if win condition has been met
     if(post3[0] === winArray[0] && post3[1] === winArray[1] && post3[2] ===  winArray[2]){
 
@@ -85,16 +90,16 @@ function post1Click(){
             
             if(queue[0] == 1){
                 
-                    // if queue holds one. draw disk 3
-                    $('<div/>', {class : 'disk3'}).prependTo($("#post1 .diskqueue"))
-                } 
-                // if queue holds two. draw disk 2
-                else if(queue[0] == 2){
-                    $('<div/>', {class : 'disk2'}).prependTo($("#post1 .diskqueue"))
-                } 
-                // if queue holds three. draw disk 1
-                else if (queue[0] == 3){
-                    $('<div/>', {class : 'disk1'}).prependTo($("#post1 .diskqueue"))
+                // if queue holds one. draw disk 3
+                $('<div/>', {class : 'disk3'}).prependTo($("#post1 .diskqueue"))
+            } 
+            // if queue holds two. draw disk 2
+            else if(queue[0] == 2){
+                $('<div/>', {class : 'disk2'}).prependTo($("#post1 .diskqueue"))
+            } 
+            // if queue holds three. draw disk 1
+            else if (queue[0] == 3){
+                $('<div/>', {class : 'disk1'}).prependTo($("#post1 .diskqueue"))
                 
             }
         }        
@@ -153,8 +158,6 @@ function post1Click(){
         // check to see if the user has won
         checkWin()
     }
-
-    
 }
 
 // function that controls post2 clicks
@@ -333,7 +336,7 @@ function resetBoard(){
     // reset variables
     moves = 0
     time = 0
-    postNum = 0
+    // postNum = 0
 
     queue = []
     post1 = [3,2,1]
@@ -376,9 +379,9 @@ function resetBoard(){
     // turn off restart button listener
     // $("#restart").off()
 
+    //missing parentheses. This should solve your reset problem
+    $("#restart").off() 
     $("#start").on("click", startGame)
-    $("#restart").off
-    
 }
 
 // function to start the game

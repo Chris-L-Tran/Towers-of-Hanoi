@@ -1,3 +1,5 @@
+/* Good use of flexbox! */
+
 body{
     background-color: #485e75;
     background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
@@ -48,11 +50,9 @@ p{
     flex-flow: column;
     width:300px;
     height:300px;
-    
 }
 
 .diskqueue{
-    
     display:flex;
     justify-content:center;
     align-items: flex-end;
@@ -62,7 +62,6 @@ p{
 }
 
 .disks{
-    
     display:flex;
     justify-content:flex-end;
     align-items: center;
@@ -71,7 +70,6 @@ p{
     width:200px;
     height:180px;
     padding: 0 0 15px 0;
-
 }
 
 .rod{
@@ -81,8 +79,6 @@ p{
     border-radius:50px;
     position:relative;
     top:10px
-    
-
 }
 
 .base{
@@ -90,8 +86,7 @@ p{
     height: 15px;
     background-image: url("marble.png");
     border-radius: 50px;
-    position: relative;
-    
+    position: relative;   
 }
 
 .disk1{
@@ -100,7 +95,6 @@ p{
     height: 30px;
     border-radius: 75px;
     position: relative;
-
 }
 
 .disk2{
@@ -129,5 +123,4 @@ p{
 
 .button{
     width: 50px;
-    
 }
